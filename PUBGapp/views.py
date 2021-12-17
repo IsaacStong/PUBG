@@ -62,6 +62,11 @@ def predictPlacement(request):
         testData['percent_damage'] = 0.010121
         testData['percent_team_damage'] = 0.040337
         result = squads.predict(testData[['assists', 'DBNOs', 'killStreaks', 'longestKill', 'matchDuration', 'maxPlace', 'numGroups', 'rankPoints', 'revives', 'teamKills', 'vehicleDestroys', 'players_in_match', 'players_in_team', 'kills_in_match', 'percent_kill', 'percent_team_kill', 'damage_in_match', 'percent_damage', 'percent_team_damage', 'headshot_rate', 'heals_and_boosts', 'items',  'total_distance']])
-    result = {'prediction': abs(float(format(result[0], ".2f")))*100}
+    result = result[0]
+    result = str(result)[0:2]
+    if float(result) < 1:
+        result = {'prediction': abs(float(result))*100}
+    else:
+        result = {'prediction': abs(float(result))}
 
     return render(request, 'Result.html', result)
