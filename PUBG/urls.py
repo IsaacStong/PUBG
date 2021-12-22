@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from PUBGapp import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('^$', views.index, name='index'),
     url('predictPlacement', views.predictPlacement, name='PredictPlacement')
 ]
+
+urlpatterns += staticfiles_urlpatterns()

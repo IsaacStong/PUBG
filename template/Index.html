@@ -1,3 +1,4 @@
+{% load static from static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,42 +8,55 @@
 </head>
 <body style="background-color:#90EE90;">
 <div class="container">
-    <h2>Predict Percent Chance of Winning on your PUBG Match</h2>
-
+    <h2>Predict Percent Chance of Winning on your PUBG Match <img src="{% static 'img/Logo.png' %}"></h2>
     <h3>Please enter match details in numerical form:</h3>
     <br>
+</div>
     <form  METHOD="post" enctype="multipart/form-data" action="predictPlacement">
         {% csrf_token %}
-        <div class="col-md-4 col-sm-4"><label for="fname">Assists:</label> </div><input name="assistsVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Boosts:</label> </div><input name="boostsVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">DBNO's:</label> </div><input name="DBNOsVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Heals:</label> </div><input name="healsVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Best Kill Streak:</label> </div><input name="killstreaksVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Longest Distance Kill:</label> </div><input name="distancekillVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Match Duration:</label> </div><input name="matchDurationVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Account Rank Points:</label> </div><input name="rankVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Revives Made:</label> </div><input name="revivesVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Distance on Vehicle:</label> </div><input name="rideDistanceVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Road Kills:</label> </div><input name="roadKillsVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Distance Swam:</label> </div><input name="SwimVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Friendly Kills:</label> </div><input name="teamKillsVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Number of Vehicles you Destroyed:</label> </div><input name="vehicleDestroysVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Distance Walked:</label> </div><input name="walkVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Number of Weapons Picked Up:</label> </div><input name="weaponsVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Players in Match:</label> </div><input name="players_in_matchVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Players in Team:</label> </div><input name="players_in_teamVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Total Kills in Match:</label> </div><input name="kills_in_matchVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Percentage of Total Kills Made by Team:</label> </div><input name="teamKVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Damage in Match:</label> </div><input name="damage_in_matchVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Percent Team Damage in Match:</label> </div><input name="percent_team_damageVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Head Shot %:</label> </div><input name="headshot_rateVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Items Used:</label> </div><input name="itemsVal" type="text"><br><br>
-        <div class="col-md-4 col-sm-4"><label for="fname">Match Type:</label> </div><select name="matchType" type="text"><option value="solo">Solo</option><option value="duo">Duo</option><option value="squad">Squad</option></select><br><br>
-        <br>
-        <input type="submit" value="Submit" class="btn btn-secondary">
-        <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Assists:</label> </div><input name="assistsVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Boosts:</label> </div><input name="boostsVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">DBNO's:</label> </div><input name="DBNOsVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Heals:</label> </div><input name="healsVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Best Kill Streak:</label> </div><input name="killstreaksVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Longest Distance Kill:</label> </div><input name="distancekillVal" type="text"><br><br>
+                </div>
+                <div class="col">
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Match Duration:</label> </div><input name="matchDurationVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Account Rank Points:</label> </div><input name="rankVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Revives Made:</label> </div><input name="revivesVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Distance on Vehicle:</label> </div><input name="rideDistanceVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Road Kills:</label> </div><input name="roadKillsVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Distance Swam:</label> </div><input name="SwimVal" type="text"><br><br>
+                </div>
+                <div class="col">
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Friendly Kills:</label> </div><input name="teamKillsVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Number of Vehicles you Destroyed:</label> </div><input name="vehicleDestroysVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Distance Walked:</label> </div><input name="walkVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Number of Weapons Picked Up:</label> </div><input name="weaponsVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Players in Match:</label> </div><input name="players_in_matchVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Players in Team:</label> </div><input name="players_in_teamVal" type="text"><br><br>
+                </div>
+                <div class="col">
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Total Kills in Match:</label> </div><input name="kills_in_matchVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Percentage of Total Kills Made by Team:</label> </div><input name="teamKVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Damage in Match:</label> </div><input name="damage_in_matchVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Percent Team Damage in Match:</label> </div><input name="percent_team_damageVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Head Shot %:</label> </div><input name="headshot_rateVal" type="text"><br><br>
+                    <div class="col-md-4 col-sm-4"><label for="fname" class="text-nowrap">Items Used:</label> </div><input name="itemsVal" type="text"><br><br>
+                </div>
+                <div class="col-sm">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4"><label for="fname">Match Type:</label> </div><select name="matchType" type="text"><option value="solo">Solo</option><option value="duo">Duo</option><option value="squad">Squad</option></select><br><br>
+            <br>
+            <input type="submit" value="Submit" class="btn btn-secondary">
+            <br><br>
+        </div>
     </form>
-</div>
 <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
